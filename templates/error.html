@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block heading %} {{head}} {% endblock %} {% block header %}
+
+<ul class="nav justify-content-end nav-pills">
+    <li class="nav-item">
+        <a class="nav-link " href="\{{sidebar}}">{{sidebar_placeholder}}</a>
+    </li>
+</ul>
+{% endblock %} {% block body %}
+<div>
+    <h1>
+        {{message}}
+    </h1>
+    <a href="\{{dir}}">{{dir_placeholder}}</a>
+
+</div>
+
+{% endblock %}

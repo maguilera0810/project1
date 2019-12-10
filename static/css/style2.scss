@@ -1,0 +1,90 @@
+$percent-80: 80%;
+$percent-10: 10%;
+$color1: aliceblue;
+$color2: coral;
+%back-color {
+    background-color: $color1;
+}
+
+%op {
+    background-color: $color1;
+    filter: alpha(opacity=60);
+    opacity: .8;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: $percent-80;
+    margin-bottom: $percent-10/5;
+}
+
+#tcentrado {
+    @extend %back-color;
+    align-content: center;
+    margin-left: 2 *$percent-10;
+    margin-bottom: 1%;
+    width: $percent-80 - 2 *$percent-10;
+    height: 2 * $percent-10;
+}
+
+.tabla_index {
+    @extend %back-color;
+    margin-left: $percent-10;
+    margin-right: $percent-10;
+    .tbcontent {
+        text-align: center;
+    }
+}
+
+@media (min-width:1200px) {
+    #tcentrado {
+        background-color: $color1;
+    }
+}
+
+@media (max-width:1199px) {
+    #tcentrado {
+        background-color: $color2;
+        ;
+    }
+}
+
+body {
+    // Location of the image 
+    background-image: url(../images/books_background.jpg);
+    // Background image is centered vertically and horizontally at all times
+    background-position: center center;
+    // Background image doesn't tile 
+    background-repeat: no-repeat;
+    // Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height
+    background-attachment: fixed;
+    // This is what makes the background image rescale based on the container's size 
+    background-size: cover;
+    // Set a background color that will be displayed while the background image is loading
+    background-color: #464646;
+    margin-top: 0px;
+}
+
+.opaco {
+    @extend %op;
+}
+
+.forms {
+    @extend %op;
+    padding: 3%;
+    margin-left: $percent-10;
+    margin-right: $percent-10;
+    margin-bottom: 100px;
+    ;
+}
+
+.title {
+    text-align: center;
+}
+
+.searching {
+    width: 100%;
+    align-self: auto;
+    align-content: initial;
+}

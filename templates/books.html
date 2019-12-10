@@ -1,0 +1,155 @@
+ {% extends "layout.html" %} {% block heading %} {{book.title}} {% endblock %} {% block header %}
+
+
+<ul class="nav justify-content-end nav-pills">
+    <li class="nav-item">
+        <a class="nav-link " href="\search">Search</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="\logout">Logout</a>
+    </li>
+</ul>
+{% endblock %} {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="display-4 ">Information</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/addreview/{{book.isbn}}" method="POST" class="opaco">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" placeholder="First name" value="{{book.title}}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input type="text" class="form-control" id="author" placeholder="Last name" value="{{book.author}}" disabled>
+                        </div>
+                        <div class="form-row">
+
+
+                            <div class="form-group col-md-6">
+                                <label for="year">Year</label>
+                                <input type="text" class="form-control" id="year" placeholder="First name" value="{{book.year}}" disabled>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="isbn">ISBN</label>
+                                <input type="text" class="form-control" id="isbn" placeholder="First name" value="{{book.isbn}}" disabled>
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <label for="isbn">Average Rating</label>
+                                <input type="text" class="form-control" id="isbn" placeholder="First name" value="{{res.average_rating}}" disabled>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="isbn">Number of  Ratings</label>
+                                <input type="text" class="form-control" id="isbn" placeholder="First name" value="{{res.ratings_count}}" disabled>
+                            </div>
+                        </div>
+                        <label for="rk">Add Review</label>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="rk">Rank</label>
+                                <select class="form-control" id="rk" name="rank">
+                                    <option value = 1>1</option>
+                                    <option value = 2>2</option>
+                                    <option value = 3>3</option>
+                                    <option value = 4>4</option>
+                                    <option value = 5>5</option>
+                                </select>
+                                <!-- <input type="number" class="form-control" id="rk" name="rank"> -->
+                            </div>
+                            <div class="form-group col-md-10">
+                                <label for="rvw">Review</label>
+                                <textarea type="text" class="form-control" name="opinion" id="rvw" placeholder="Enter Your Review of the book"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">{{message}}</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+
+            {% if reviews|length == 0 %}
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="display-5 ">Book not reviewed yet</h5>
+                </div>
+            </div>
+
+
+            {% else %}
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Ranking</th>
+                        <th scope="col">Opinion</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for review in reviews %}
+                    <tr>
+                        <th scope="row">{{review.rank}}</th>
+                        <td>{{review.opinion}}</td>
+                    </tr>
+                    {%endfor%}
+
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+<!-- 
+<head>
+    <title>{{book.title}}</title>
+</head>
+
+<body>
+    <h1>{{book.title}}</h1>
+    <ul>
+        <li><span>Author :</span> {{book.author}}</li>
+        <li><span>Year :</span> {{book.year}}</li>
+        <li><span>ISBN :</span> {{book.isbn}}</li>
+    </ul>
+
+    <h2>Goodreads' Reviews: </h2>
+    <h3> Average rating: {{res.average_rating}}</h3>
+    <h3> Number of ratings: {{res.ratings_count}} </h3>
+
+    <h2>Reviews: </h2>
+
+    {% if reviews|length == 0 %}
+    <h3>Book not reviewed yet</h3>
+    {% else %}
+    <ol>
+        {% for review in reviews %}
+        <div>
+            <li> {{review.opinion}}</li>
+            <div>{{review.rank}}</div>
+        </div>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+
+    <a href="/review/{{book.isbn}}"> Add review </a> </li> 
+
+<h3>{{message}}</h3>
+<form action="\addreview/{{book.isbn}}" method="post">
+    <input type="number" name="rank" placeholder="Enter Your 1-5 Rating">
+    <input type="number" name="opinion" placeholder="Enter Your Review of the book">
+    <button>Submit</button>
+</form>
+</body -->

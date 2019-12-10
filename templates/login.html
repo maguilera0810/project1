@@ -1,0 +1,25 @@
+{% extends "layout.html" %} {% block title %} Login {% endblock %} {% block header %}
+
+<ul class="nav justify-content-end nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active" href="agua.html">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="tierra.html">Sign up</a>
+    </li>
+</ul>
+{% endblock %} {% block body %}
+
+<div class="tbcontent">
+    <h1>Login </h1>
+    <form action="" method="POST">
+        Username:
+        <input type="text" name="username" />
+        <br> Password:
+        <input type="password" name="password" />
+        <br>
+        <input type="submit" value="Enter" />
+    </form>
+    <h3>{{message}}</h3>
+</div>
+{% endblock %}

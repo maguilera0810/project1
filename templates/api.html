@@ -1,0 +1,27 @@
+ {% extends "layout.html" %} {% block heading %}{% endblock %} {% block header %}
+
+<ul class="nav justify-content-end nav-pills">
+    <li class="nav-item">
+        <a class="nav-link " href="agua.html">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="tierra.html">Sign up</a>
+    </li>
+</ul>
+{% endblock %} {% block body %}
+
+<div class="container ">
+    <div class="card bg-light mb-3" style="max-width: 18em;">
+        <div class="card-header">Goodreads Review Data</div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">{{yaison}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- {% for book in books %}
+<li>
+    {{book}}
+</li>
+{% endfor %} {% endblock %} -->

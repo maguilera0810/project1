@@ -1,0 +1,51 @@
+ {% extends "layout.html" %} {% block heading %}{% endblock %} {% block header %}
+
+<ul class="nav justify-content-end nav-pills">
+    <li class="nav-item">
+        <a class="nav-link " href="\logout">Logout</a>
+    </li>
+</ul>
+{% endblock %} {% block body %}
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="display-5">Search</h1>
+                </div>
+                <div class="card-body">
+                    <form class="opaco" action="{{url_for('result')}}" method="post">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputTitle">Title</label>
+                                <input type="text" class="form-control" id="inputTitle" name="title" placeholder="Title">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputAuthor">Author</label>
+                                <input type="text" class="form-control" id="inputAuthor" name="author" placeholder="Author">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputISBN">ISBN</label>
+                                <input type="text" class="form-control" id="inputISBN" name="isbn" placeholder="ISBM">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputYear">Year</label>
+                                <input type="integer" class="form-control" id="inputYear" name="year" placeholder="Year">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {% for book in books %}
+<li>
+    {{book}}
+</li>
+{% endfor %} {% endblock %} -->

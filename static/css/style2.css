@@ -1,0 +1,71 @@
+.tabla_index, #tcentrado {
+  background-color: aliceblue;
+}
+
+.forms, .opaco {
+  background-color: aliceblue;
+  filter: alpha(opacity=60);
+  opacity: 0.8;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+#tcentrado {
+  align-content: center;
+  margin-left: 20%;
+  margin-bottom: 1%;
+  width: 60%;
+  height: 20%;
+}
+
+.tabla_index {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.tabla_index .tbcontent {
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  #tcentrado {
+    background-color: aliceblue;
+  }
+}
+@media (max-width: 1199px) {
+  #tcentrado {
+    background-color: coral;
+  }
+}
+body {
+  background-image: url(../images/books_background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  margin-top: 0px;
+}
+
+.forms {
+  padding: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 100px;
+}
+
+.title {
+  text-align: center;
+}
+
+.searching {
+  width: 100%;
+  align-self: auto;
+  align-content: initial;
+}
+
+/*# sourceMappingURL=style2.css.map */

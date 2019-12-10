@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block heading %} {% endblock %} {% block header %} {% endblock %} {% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="display-4">Sign in</h1>
+                </div>
+                <div class="card-body">
+                    <form action="\sign" class="opaco" method="POST">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputEmail_li">Email</label>
+                                <input type="email" class="form-control" id="inputEmail_li" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputPassword1_li">Password</label>
+                                <input type="password" class="form-control" id="inputPassword1_li" name="pwd" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="display-4 ">Sign up</h1>
+                </div>
+                <div class="card-body">
+                    <form action="\register" class="opaco" method="POST">
+
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="First name" name="fname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword4">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Last name" name="lname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword1">Password</label>
+                            <input type="password" class="form-control" id="inputPassword1" placeholder="Password" name="pwd" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Sign up</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <form action="\login" method="post">
+    <input type="text" name="username" placeholder="Enter Your Name">
+    <input type="password" name="password" placeholder="Enter Your Password">
+    <button>Submit</button>
+</form> -->
+{% endblock %}

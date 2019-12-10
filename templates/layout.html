@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Proyect 1</title>
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+
+</head>
+
+<!-- <body background="static/images/books_background.jpg" width=100% repeat-x repeat-y;> -->
+
+<body>
+
+    <header class="opaco">
+
+        {% block header %}{% endblock %}
+    </header>
+
+
+
+
+    <h1 class="display-3">{% block heading %}{% endblock %}</h1>
+    {% block body %} {% endblock %}
+
+</body>
+
+</html>
