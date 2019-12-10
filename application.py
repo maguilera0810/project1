@@ -45,8 +45,12 @@ def avrg(reviews):
 
 @app.route("/")
 def index():
-    session["active"] = []
-    return render_template("index.html")
+    if not "active" in session or ("active" in session and session["active"] == []):
+        session["active"] = []
+        return render_template("index.html")
+    else:
+
+        return redirect(url_for("search"))
 
 
 @app.route("/logout")
@@ -122,6 +126,7 @@ def register():
 def search():
     print(session)
     if not "active" in session or ("active" in session and session["active"] == []):
+        session["active"] = []
         return redirect(url_for("index"))
     return render_template("busquedad.html")
 
@@ -165,9 +170,10 @@ def result():
     else:
         print(session)
         if not "active" in session or ("active" in session and session["active"] == []):
-            return redirect(url_for("search"))
-        else:
+            session["active"] = []
             return redirect(url_for("index"))
+        else:
+            return redirect(url_for("search"))
 
 
 @app.route("/result/<string:isbn>", methods=["GET"])
@@ -260,12 +266,10 @@ def api(id):
         f"SELECT * FROM treview WHERE book_id = '{id}'").fetchall()
 
     if len(book) == 0:
-        return render_template(
-            'error.html',
-            message="The book does not exist",
-            head="Error 404",
-            dir="",
-            dir_placeholder="Home"), 404
+        json_res = {
+            "error":404
+        }
+        return json_res, 200
     else:
         book = book[0]
         json_res = {
