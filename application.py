@@ -269,7 +269,7 @@ def api(id):
         json_res = {
             "error":404
         }
-        return json_res, 200
+        return json_res, 404
     else:
         book = book[0]
         json_res = {
