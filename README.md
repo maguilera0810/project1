@@ -4,9 +4,14 @@ Web Programming with Python and JavaScript
 
 Welcome to project 1: Books
 
-It is organized as follows:
 
-6 HTML files:
+Youtube:
+    https://youtu.be/9gOyP8DCJTQ
+
+Structure:
+
+Templates folder:
+
     -books.html: The information of a given book appears 
     on this page.
 
